@@ -38,16 +38,16 @@ Array* intersection(Array* a1, Array* a2) {
 
 int main(void) {
   Array* a1 = malloc(sizeof(Array));
-  a1->values = malloc(4 * sizeof(size_t));
   a1->length = 4;
+  a1->values = malloc(a1->length * sizeof(size_t));
   a1->values[0] = 10;
   a1->values[1] = 5;
   a1->values[2] = 2;
   a1->values[3] = 25;
 
   Array* a2 = malloc(sizeof(Array));
-  a2->values = malloc(4 * sizeof(size_t));
   a2->length = 4;
+  a2->values = malloc(a2->length * sizeof(size_t));
   a2->values[0] = 3;
   a2->values[1] = 23;
   a2->values[2] = 10;
