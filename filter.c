@@ -23,9 +23,9 @@ Array* filter(bool (*func) (size_t), Array* array)
       }
   }
   if (ctr < array->length) {
-    size_t* r = realloc(result->values, ctr * sizeof(size_t));
-    if (!*r) {
-      fprintf(stderr, "Could not realloc filter values.");
+    size_t* realloc_tmp = realloc(result->values, ctr * sizeof(size_t));
+    if (!realloc_tmp) {
+      fprintf(stderr, "filter(): Out of memory.\n");
       exit(EXIT_FAILURE);
     }
     result->length = ctr;
