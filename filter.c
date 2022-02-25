@@ -24,7 +24,7 @@ Array* filter(bool (*func) (size_t), Array* array)
   }
   if (ctr < array->length) {
     size_t* r = realloc(result->values, ctr * sizeof(size_t));
-    if (!r) {
+    if (!*r) {
       fprintf(stderr, "Could not realloc filter values.");
       exit(EXIT_FAILURE);
     }
