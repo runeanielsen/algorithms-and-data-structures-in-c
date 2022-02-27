@@ -22,7 +22,7 @@ void stack_push(Stack* s, size_t x) {
     s->values = malloc(sizeof(size_t));
   } else {
     s->values = realloc(s->values, s->length * sizeof(size_t));
-    if (s->values == NULL) {
+    if (!s->values) {
         fprintf(stderr, "stack_push(): Out of memory.\n");
         exit(EXIT_FAILURE);
     }
@@ -45,7 +45,7 @@ size_t stack_pop(Stack* s) {
     s->values = NULL;
   } else {
     s->values = realloc(s->values, s->length * sizeof(size_t));
-    if (s->values == NULL) {
+    if (!s->values) {
         fprintf(stderr, "stack_pop(): Out of memory.\n");
         exit(EXIT_FAILURE);
     }
