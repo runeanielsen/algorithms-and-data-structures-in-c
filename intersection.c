@@ -36,6 +36,11 @@ Array* intersection(Array* a1, Array* a2) {
   return result;
 }
 
+void free_array(Array* a) {
+  free(a->values);
+  free(a);
+}
+
 int main(void) {
   Array* a1 = malloc(sizeof(Array));
   a1->length = 4;
@@ -56,12 +61,9 @@ int main(void) {
   Array* intersections = intersection(a1, a2);
   print_array(intersections);
 
-  free(intersections->values);
-  free(intersections);
-  free(a1->values);
-  free(a2->values);
-  free(a1);
-  free(a2);
+  free_array(intersections);
+  free_array(a1);
+  free_array(a2);
 
   return EXIT_SUCCESS;
 }
