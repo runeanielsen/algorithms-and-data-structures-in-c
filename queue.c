@@ -1,3 +1,5 @@
+/* Implementation of a dynamic array based queue. */
+
 #include <stdlib.h>
 #include <stdio.h>
 
