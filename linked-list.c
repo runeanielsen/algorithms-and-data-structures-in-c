@@ -2,21 +2,27 @@
 #include <stdio.h>
 
 typedef struct Node {
-  size_t number;
+  size_t value;
   struct Node* next;
 } Node;
 
-void print_list(Node* n) {
-  while(n) {
-    printf("Number is %zu\n", n->number);
-    n = n->next;
-  }
+Node* create_node(size_t value) {
+  Node* node = malloc(sizeof(Node));
+  node->value = value;
+  return node;
 }
 
-Node* add(size_t number, Node* head) {
-  Node* new_head = malloc(sizeof(Node));
-  *new_head = (Node){ .number = number, .next = head };
-  return new_head;
+Node* add_node(size_t value, Node* head) {
+  Node* node = create_node(value);
+  node->next = head;
+  return node;
+}
+
+void print_nodes(Node* head) {
+  while (head) {
+    printf("Node has value: %zu\n", head->value);
+    head = head->next;
+  }
 }
 
 void free_nodes(Node* head) {
@@ -28,17 +34,12 @@ void free_nodes(Node* head) {
 }
 
 int main(void) {
-  size_t size = 20;
-  Node* head = malloc(sizeof(Node));
-  head->number = 0;
-
-  for (size_t i = 1; i < size; i++) {
-    head = add(i, head);
+  Node* head = create_node(0);
+  for (size_t i = 1; i < 10; i++) {
+    head = add_node(i, head);
   }
 
-  print_list(head);
-
-  // To show how to free the linked-list from memory.
+  print_nodes(head);
   free_nodes(head);
 
   return EXIT_SUCCESS;
