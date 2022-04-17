@@ -41,6 +41,7 @@ int main(void) {
 
   print_nodes(head);
   free_nodes(head);
+  head = NULL;
 
   return EXIT_SUCCESS;
 }
