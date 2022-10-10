@@ -23,7 +23,7 @@ int main(void) {
   if (process_id > 0) {
     printf("process_id of child process %d\n", process_id);
     // return success in exit status
-    exit(0);
+    _exit(0);
   }
 
   // Unmask the file mode
