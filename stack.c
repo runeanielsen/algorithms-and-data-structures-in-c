@@ -85,6 +85,7 @@ int main(void){
   }
 
   free_stack(s);
+  s = NULL;
 
   return EXIT_SUCCESS;
 }
