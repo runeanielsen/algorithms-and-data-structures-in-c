@@ -17,7 +17,7 @@ int main(void) {
     exit(1);
   }
 
-  // Parent process, should be kiled af successfull fork.
+  // Parent process, should be killed on successful fork.
   if (process_id > 0) {
     printf("process_id of child process %d\n", process_id);
     _exit(0);
