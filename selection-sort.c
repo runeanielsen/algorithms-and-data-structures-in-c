@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void selection_sort(size_t numbers[], size_t length) {
   for (size_t i = 0; i < length; i++) {
@@ -18,7 +18,7 @@ void selection_sort(size_t numbers[], size_t length) {
 }
 
 int main(void) {
-  size_t numbers[] = { 10, 5, 2, 3, 50, 100, 1000, 17, 13, 25 };
+  size_t numbers[] = {10, 5, 2, 3, 50, 100, 1000, 17, 13, 25};
   size_t length = sizeof(numbers) / sizeof(*numbers);
 
   selection_sort(numbers, length);
